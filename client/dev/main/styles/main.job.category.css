@@ -1,0 +1,9 @@
+.job-category-container {
+  width: 500px;
+  text-align: center;
+  margin: 0 auto; }
+  .job-category-container .job-category-card-title {
+    position: absolute;
+    top: 50%;
+    margin-top: -1em;
+    height: 1em; }
