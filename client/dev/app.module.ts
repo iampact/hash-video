@@ -8,18 +8,43 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 // restangular
 import { RestangularModule } from "ngx-restangular";
 
+// app
 import { App } from "./app";
 
+// common
+import { LoginModalCmp } from "./common/components/login-modal-cmp";
+import { CommonService } from "./common/services/common-service";
 import { ConfService } from "./common/services/conf-service";
 
+// menu
+import { MenuCmp } from "./menu/components/menu-cmp";
+import { MenuTopCmp } from "./menu/components/menu-top-cmp";
+import { MenuBottomCmp } from "./menu/components/menu-bottom-cmp";
+import { MenuService } from "./menu/services/menu-service";
+
+// main
 import { MainCmp } from "./main/components/main-cmp";
 import { MainJobCategoryCmp } from "./main/components/main-job-category-cmp";
 import { MainRouting } from "./main/components/main-route";
 import { MainService } from "./main/services/main-service";
 
+// freelancers
+import { FreeCmp } from "./freelancers/components/free-cmp";
+import { FreeRouting } from "./freelancers/components/free-route";
+import { FreeService } from "./freelancers/services/free-service";
+
+// projects
+import { ProjectCmp } from "./projects/components/project-cmp";
+import { ProjectRouting } from "./projects/components/project-route";
+import { ProjectService } from "./projects/services/project-service";
+
+// todo
 import { TodoCmp } from "./todo/components/todo-cmp";
 import { TodoRouting } from "./todo/components/todo-route";
 import { TodoService } from "./todo/services/todo-service";
+
+// angular2 font-awesome
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 
 // elasticsearch
 import { ElasticSearchService } from "./elasticsearch.service";
@@ -108,35 +133,56 @@ export function RestangularConfigFactory (RestangularProvider, authService) {
 
 @NgModule({
     imports: [
+      Angular2FontawesomeModule,
       BrowserModule,
       BrowserAnimationsModule,
       FormsModule,
       HttpModule,
       MainRouting,
+      FreeRouting,
+      ProjectRouting,
       TodoRouting,
+      MdIconModule,
       MdInputModule,
       MdGridListModule,
       MdButtonModule,
+      MdToolbarModule,
+      MdMenuModule,
       MdCardModule,
       MdSidenavModule,
       CdkTableModule,
+      MdDialogModule,
       RestangularModule.forRoot(RestangularConfigFactory),
     ],
     declarations: [
       App,
+      MenuCmp,
+      MenuTopCmp,
+      MenuBottomCmp,
       MainCmp,
       MainJobCategoryCmp,
+      FreeCmp,
+      ProjectCmp,
+      LoginModalCmp,
       TodoCmp,
     ],
+    entryComponents: [
+      LoginModalCmp
+    ],
     providers: [
+      CommonService,
       ConfService,
+      MenuService,
       MainService,
+      FreeService,
+      ProjectService,
       TodoService,
       ElasticSearchService,
       OverlayContainer,
     ],
     bootstrap: [
       App,
+      //LoginModalCmp
     ],
 })
 

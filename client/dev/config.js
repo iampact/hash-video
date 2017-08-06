@@ -37,6 +37,8 @@ System.config({
     'lodash': 'npm:lodash',
     // restangular
     'ngx-restangular': 'npm:ngx-restangular/dist/esm/src/index.js',
+    // font awesome
+    'angular2-fontawesome': 'npm:angular2-fontawesome'
   },
   meta: {
     elasticsearch: {
@@ -46,11 +48,18 @@ System.config({
     hammerjs: {
       format: 'global',
       exports: 'hammerjs'
+    },
+    lodash: {
+      format: 'global',
+      exports: 'lodash'
     }
   },
   packages: {
     'rxjs': {
       main: 'Rx.js'
+    },
+    'angular2-fontawesome': {
+      defaultExtension: 'js'
     }
   }
 });

@@ -5,7 +5,7 @@ import {
 
 @Component({
 	selector: "app",
-	template: "<router-outlet></router-outlet>",
+	templateUrl: "app.html",
   styleUrls: ["app.css"],
 })
 export class App {

@@ -1,0 +1,35 @@
+/*
+* color factory
+*/
+.external-login-btn {
+  display: block;
+  border-radius: 2em;
+  width: 100%;
+  text-align: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 10px; }
+  .external-login-btn .external-login-icon {
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border-radius: 1em;
+    display: inline-block;
+    text-align: center; }
+    .external-login-btn .external-login-icon > i.fa {
+      vertical-align: top;
+      margin-top: 6px; }
+  .external-login-btn .external-login-text {
+    color: white;
+    margin-left: 5px;
+    text-align: center;
+    width: 200px;
+    display: inline-block; }
+  .external-login-btn.facebook-style {
+    background-color: #3b5998; }
+    .external-login-btn.facebook-style .external-login-icon > i.fa {
+      color: #3b5998; }
+  .external-login-btn.google-style {
+    background-color: #4285f4; }
+    .external-login-btn.google-style .external-login-icon > i.fa {
+      color: #4285f4; }

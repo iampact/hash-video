@@ -1,0 +1,40 @@
+/*
+* color factory
+*/
+.main-top-menu .mat-toolbar-row {
+  overflow: hidden; }
+
+.main-top-menu .main-logo {
+  background-color: white; }
+  .main-top-menu .main-logo > a > img {
+    max-height: 50px;
+    vertical-align: middle; }
+
+.main-top-menu .menu-login {
+  padding: 16px 25px;
+  cursor: pointer;
+  height: 100%; }
+  .main-top-menu .menu-login > * {
+    vertical-align: middle; }
+  .main-top-menu .menu-login:hover, .main-top-menu .menu-login:active {
+    background-color: #e0e0e0; }
+
+.main-top-menu nav.main-top-menu-container {
+  flex: 1 1 auto;
+  font-size: 16px;
+  height: 100%; }
+  .main-top-menu nav.main-top-menu-container .main-top-menu-list {
+    height: 100%; }
+    .main-top-menu nav.main-top-menu-container .main-top-menu-list .menu-item {
+      display: inline-block;
+      height: 100%;
+      overflow: hidden; }
+      .main-top-menu nav.main-top-menu-container .main-top-menu-list .menu-item > a {
+        padding: 17px 25px;
+        display: block; }
+      .main-top-menu nav.main-top-menu-container .main-top-menu-list .menu-item:first-child {
+        margin-left: 20px; }
+      .main-top-menu nav.main-top-menu-container .main-top-menu-list .menu-item:last-child {
+        margin-right: 20px; }
+      .main-top-menu nav.main-top-menu-container .main-top-menu-list .menu-item:hover, .main-top-menu nav.main-top-menu-container .main-top-menu-list .menu-item:active {
+        background-color: #e0e0e0; }

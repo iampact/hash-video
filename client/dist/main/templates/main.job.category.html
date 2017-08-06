@@ -1,1 +1,0 @@
-<md-grid-list class="job-category-container" cols="{{gridCols}}" rowHeight="{{gridRowHeight}}"><md-grid-tile *ngFor="let tile of mainJobCategory" (click)="jobCategoryClick(tile)"><md-card class="job-category-card"><img md-card-image [src]="tile.CONFUI_IMG"></md-card><p class="job-category-card-title">{{tile.CONFUI_DISP}}</p></md-grid-tile></md-grid-list>

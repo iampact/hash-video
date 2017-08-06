@@ -18,7 +18,7 @@ var App = (function () {
     App = __decorate([
         core_1.Component({
             selector: "app",
-            template: "<router-outlet></router-outlet>",
+            templateUrl: "app.html",
             styleUrls: ["app.css"],
         })
     ], App);

@@ -14,7 +14,7 @@ import {
 import {MainService} from "../services/main-service";
 import {ElasticSearchService} from "../../elasticsearch.service";
 import SearchParams = Elasticsearch.SearchParams;
-import ConfUIObject = ConfObject.ConfUiObject;
+import ConfUIObject = Conf.ConfUiObject;
 
 type EsSearchResult = {
   hits:Object,

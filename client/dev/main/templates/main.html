@@ -4,7 +4,6 @@
 
     <md-sidenav #mainSideNav class="main-side-nav" mode="side" opened="false">Side Nav</md-sidenav>
 
-
     <div class="main-center">
 
       <form class="main-search-form"
@@ -19,6 +18,7 @@
                  [(ngModel)]="mainSearchForm.keyword"
                  [class.main-error]="!mainSearchForm.keyword.length"
                  (focus)="mainSideNav.open()"
+                 (focusout)="mainSideNav.close()"
                  autofocus />
         </md-input-container>
 

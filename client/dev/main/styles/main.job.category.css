@@ -6,4 +6,6 @@
     position: absolute;
     top: 50%;
     margin-top: -1em;
-    height: 1em; }
+    height: 1em;
+    color: white;
+    text-shadow: 1px 1px black; }

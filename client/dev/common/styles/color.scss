@@ -1,0 +1,72 @@
+/*
+* color factory
+*/
+$hash-video-active-main-color: #00ada9;
+
+$color-global-text: rgb(90, 90, 90);
+$color-global-input-border: #c0c0c0;
+$color-global-line: #c0c0c0;
+$color-global-hr-line: #DBDBDE;
+$color-global-mark-bg: #ff0;
+$color-global-mark-text: #000;
+$color-global-tab-border: #C7C7C7;
+$color-global-popup-shadow: rgba(6, 8, 10, 0.5);
+$color-global-drag-active: rgba(0, 102, 204, 0.3);
+$color-global-input-disable-text: #D586C5;
+$color-global-input-disable-border: #DBDBDE;
+$color-global-input-disable-bg: white;
+
+$color-loading-bar-bg: #E8E8E8;
+$color-loading-bg-solid: white;
+$color-loading-bg: #00ada9;
+$color-loading-wait-bg: rgba(255, 255, 255, 0);
+$color-loading-bg-transparent: rgba(255, 255, 255, .2);
+$color-loading-shadow: rgba(255,255,255,0.3);
+
+$color-main-toolbar-bg: white;
+$color-main-footer-bg: #4c6680;
+$color-main-menu-bg: white;
+$color-main-menu-bg-active: #e0e0e0;
+$color-main-menu-text: #363f44;
+$color-main-menu-text-hover: #00e6e1;
+$color-main-navi-bg: #368ECF;
+$color-main-navi-text: white;
+
+$color-login-bg: #fff;
+$color-login-message-text: #808080;
+$color-login-title-text: #00ada9;
+$color-login-shadow: #74889f;
+
+$color-button-bg: #d7d7d7;
+$color-button-text: #00ada9;
+$color-button-border: #00ada9;
+
+$color-link-text: #00ada9;
+$color-highlight-text: black;
+$color-highlight-bg: #fce571;
+
+$color-notification-notice-bg-error: rgba(245, 208, 208, 0.7);
+$color-notification-notice-text-error: #2d363b;
+$color-notification-notice-border-error: #dfd0d0;
+$color-notification-notice-bg-success: rgba(10, 134, 212, 0.7);
+$color-notification-notice-text-success: white;
+$color-notification-notice-border-success: #75A2D6 ;
+$color-notification-notice-bg-notice: rgba(255, 251, 242, 0.7);
+$color-notification-notice-text-notice: #191914;
+$color-notification-notice-border-notice: #EFCD80;
+
+@function color-darken($n:#000000, $percent:10%) {
+  @return darken($n, $percent);
+}
+@function color-lighten($n:#000000, $percent:10%) {
+  @return lighten($n, $percent);
+}
+@function color-opacity($n:#000000, $amount:0.1) {
+  @return opacify($n, $amount);
+}
+
+// external site
+$color-external-site-facebook-bg: #3b5998;
+$color-external-site-google-bg: #4285f4;
+$color-external-site-text: white;
+

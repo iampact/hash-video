@@ -1,0 +1,52 @@
+@import "../../common/styles/color.scss";
+
+.external-login-btn {
+
+  display: block;
+  border-radius: 2em;
+  width: 100%;
+  text-align: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 10px;
+
+  & > .md-icon {
+
+  }
+
+  & .external-login-icon {
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border-radius: 1em;
+    display: inline-block;
+    text-align: center;
+
+    & > i.fa {
+      vertical-align: top;
+      margin-top: 6px;
+    }
+  }
+
+  & .external-login-text {
+    color: $color-external-site-text;
+    margin-left: 5px;
+    text-align: center;
+    width: 200px;
+    display: inline-block;
+  }
+
+  &.facebook-style {
+    background-color: $color-external-site-facebook-bg;
+    & .external-login-icon > i.fa {
+      color: $color-external-site-facebook-bg;
+    }
+  }
+
+  &.google-style {
+    background-color: $color-external-site-google-bg;
+    & .external-login-icon > i.fa {
+      color: $color-external-site-google-bg;
+    }
+  }
+}

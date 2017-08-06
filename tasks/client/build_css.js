@@ -3,23 +3,24 @@ import cssmin from "gulp-clean-css";
 import {join} from "path";
 import {base, tasks} from "./const";
 import sass from "gulp-sass";
+import sassUnicode from "gulp-sass-unicode";
 
 const CSS = base.DIST + "**/*.css";
 
 const SASS = [
-  base.DEV + "**/*.{sass,scss}",
-  "!" + base.DEV + "bower_components/**/*.{sass,scss}",
-  "!node_modules/**/*.{sass,scss}",
+  base.DEV + "**/*.scss",
+  "!" + base.DEV + "bower_components/**/*.scss",
+  "!node_modules/**/*.scss",
 ];
 
 
 gulp.task(tasks.CLIENT_COMPILE_TO_CSS, () => {
 
   return gulp.src(SASS)
-             .pipe(sass())
-             .on("error", sass.logError)
-             .pipe(gulp.dest(base.DEV));
-
+    .pipe(sass())
+    .pipe(sassUnicode())
+    .on("error", sass.logError)
+    .pipe(gulp.dest(base.DEV));
 });
 
 

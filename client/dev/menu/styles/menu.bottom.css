@@ -1,0 +1,7 @@
+/*
+* color factory
+*/
+.main-footer {
+  background-color: #4c6680; }
+  .main-footer .footer-inner .main-logo > a > img {
+    max-height: 40px; }

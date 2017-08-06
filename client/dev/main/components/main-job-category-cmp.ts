@@ -3,8 +3,8 @@ import {
   OnInit
 } from "@angular/core";
 
-import {MainService} from "../services/main-service";
-import ConfUIObject = ConfObject.ConfUiObject;
+import { MainService } from "../services/main-service";
+import ConfUIObject = Conf.ConfUiObject;
 
 @Component({
   selector: "main-job-category-cmp",
@@ -30,17 +30,17 @@ export class MainJobCategoryCmp implements OnInit {
     this._init();
   }
 
-  public jobCategoryClick (item) {
+  public jobCategoryClick (item):void {
     // TODO: 해당 category로 이동
     console.log(item);
   }
 
-  public getImagePath (src) {
+  public getImagePath (src):string {
     return '/' + src;
   }
 
   // get job category
-  private _getJobCategory () :void {
+  private _getJobCategory ():void {
     this._mainService
       .getMainJobCategory()
       .subscribe((result) => {

@@ -1,0 +1,14 @@
+@import "../../common/styles/color.scss";
+
+.main-footer {
+
+  background-color: $color-main-footer-bg;
+
+  .footer-inner {
+    .main-logo {
+      & > a > img {
+        max-height: 40px;
+      }
+    }
+  }
+}
