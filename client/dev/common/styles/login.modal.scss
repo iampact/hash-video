@@ -31,8 +31,9 @@
   & .external-login-text {
     color: $color-external-site-text;
     margin-left: 5px;
+    margin-right: 15px;
     text-align: center;
-    width: 200px;
+    width: 300px;
     display: inline-block;
   }
 
@@ -47,6 +48,52 @@
     background-color: $color-external-site-google-bg;
     & .external-login-icon > i.fa {
       color: $color-external-site-google-bg;
+    }
+  }
+}
+
+.login-text-or {
+  display: block;
+  color: #bdbdbd;
+  line-height: 32px;
+  text-align: center;
+  position: relative;
+  margin: 8px auto;
+
+  &:before, &:after {
+    content: '';
+    width: 46%;
+    border-bottom: 1px solid #bdbdbd;
+    display: block;
+    position: absolute;
+    top: 50%;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+
+.login-modal-box {
+
+  .login-form-title {
+    font-size: 1.1em;
+    color: #848484;
+  }
+
+  form.login-modal-form {
+
+    font-size: 1.2em;
+    text-align: center;
+
+    .login-modal-input-container {
+      line-height: 1.5em;
+      display: block;
+
+      .mat-input-element {
+        font-size: 1.4em;
+      }
+
     }
   }
 }

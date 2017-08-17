@@ -22,8 +22,9 @@
   .external-login-btn .external-login-text {
     color: white;
     margin-left: 5px;
+    margin-right: 15px;
     text-align: center;
-    width: 200px;
+    width: 300px;
     display: inline-block; }
   .external-login-btn.facebook-style {
     background-color: #3b5998; }
@@ -33,3 +34,33 @@
     background-color: #4285f4; }
     .external-login-btn.google-style .external-login-icon > i.fa {
       color: #4285f4; }
+
+.login-text-or {
+  display: block;
+  color: #bdbdbd;
+  line-height: 32px;
+  text-align: center;
+  position: relative;
+  margin: 8px auto; }
+  .login-text-or:before, .login-text-or:after {
+    content: '';
+    width: 46%;
+    border-bottom: 1px solid #bdbdbd;
+    display: block;
+    position: absolute;
+    top: 50%; }
+  .login-text-or:after {
+    right: 0; }
+
+.login-modal-box .login-form-title {
+  font-size: 1.1em;
+  color: #848484; }
+
+.login-modal-box form.login-modal-form {
+  font-size: 1.2em;
+  text-align: center; }
+  .login-modal-box form.login-modal-form .login-modal-input-container {
+    line-height: 1.5em;
+    display: block; }
+    .login-modal-box form.login-modal-form .login-modal-input-container .mat-input-element {
+      font-size: 1.4em; }

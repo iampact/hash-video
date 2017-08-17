@@ -1,14 +1,15 @@
 import dbConst from "../constants/db.json";
 import mysql from "mysql";
+import MySQLStore from "express-mysql-session";
 
 export default class DBConfig {
     _connection;
-    static connection() {
-      const URL = (process.env.NODE_ENV === "production") ? process.env.MYSQL_URL
-                                                          : dbConst.localhost;
+    static connection () {
+      let url = DBConfig.getConnectUrl();
 
       this._connection = mysql.createConnection({
-        host     : URL,
+        host     : url,
+        port     : dbConst.port,
         user     : dbConst.user,
         password : dbConst.password,
         database : dbConst.database
@@ -24,7 +25,21 @@ export default class DBConfig {
       });
     }
 
-    static end() {
+    // mysql store
+    static newMysqlStore (session) {
+      let url = DBConfig.getConnectUrl();
+      let options = {
+        host      : url,
+        port      : dbConst.port,
+        user      : dbConst.user,
+        password  : dbConst.password,
+        database  : dbConst.database
+      };
+      let mySQLStore = MySQLStore(session);
+      return new mySQLStore(options);
+    }
+
+    static end () {
       if (this._connection) {
         this._connection.end();
       }
@@ -32,5 +47,9 @@ export default class DBConfig {
 
     static getConnection () {
       return this._connection;
+    }
+
+    static getConnectUrl () {
+      return (process.env.NODE_ENV === "production") ? process.env.MYSQL_URL : dbConst.localhost;
     }
 };

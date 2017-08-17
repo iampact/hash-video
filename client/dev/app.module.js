@@ -23,6 +23,7 @@ var app_1 = require("./app");
 var login_modal_cmp_1 = require("./common/components/login-modal-cmp");
 var common_service_1 = require("./common/services/common-service");
 var conf_service_1 = require("./common/services/conf-service");
+var session_service_1 = require("./common/services/session-service");
 // menu
 var menu_cmp_1 = require("./menu/components/menu-cmp");
 var menu_top_cmp_1 = require("./menu/components/menu-top-cmp");
@@ -130,6 +131,7 @@ var AppModule = (function () {
             ],
             providers: [
                 common_service_1.CommonService,
+                session_service_1.SessionService,
                 conf_service_1.ConfService,
                 menu_service_1.MenuService,
                 main_service_1.MainService,
@@ -148,3 +150,4 @@ var AppModule = (function () {
     return AppModule;
 }());
 exports.AppModule = AppModule;
+//# sourceMappingURL=app.module.js.map

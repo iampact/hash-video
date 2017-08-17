@@ -14,3 +14,33 @@
   </span>
   <span class="external-login-text">Google 계정으로 로그인</span>
 </button>
+<div class="login-text-or">또는</div>
+<div class="login-modal-box">
+  <p class="login-form-title">이메일로 로그인</p>
+  <form class="login-modal-form"
+        (submit)="login(loginModalForm);">
+    <md-input-container class="login-modal-input-container">
+      <input mdInput
+             name="loginName"
+             placeholder="이메일 또는 사용자명"
+             required
+             [(ngModel)]="loginModalForm.loginName"
+             [class.main-error]="!loginModalForm.loginName.length"
+             autofocus />
+    </md-input-container>
+    <md-input-container class="login-modal-input-container">
+      <input mdInput
+             name="loginPassword"
+             placeholder="비밀번호"
+             type="password"
+             required
+             [(ngModel)]="loginModalForm.loginPassword"
+             [class.main-error]="!loginModalForm.loginPassword.length" />
+    </md-input-container>
+    <button md-raised-button
+            class="mat-primary"
+            type="submit"
+            [disabled]="!loginModalForm.loginName.length || !loginModalForm.loginPassword.length">로그인</button>
+  </form>
+
+</div>

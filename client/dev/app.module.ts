@@ -15,6 +15,7 @@ import { App } from "./app";
 import { LoginModalCmp } from "./common/components/login-modal-cmp";
 import { CommonService } from "./common/services/common-service";
 import { ConfService } from "./common/services/conf-service";
+import { SessionService } from "./common/services/session-service";
 
 // menu
 import { MenuCmp } from "./menu/components/menu-cmp";
@@ -171,6 +172,7 @@ export function RestangularConfigFactory (RestangularProvider, authService) {
     ],
     providers: [
       CommonService,
+      SessionService,
       ConfService,
       MenuService,
       MainService,

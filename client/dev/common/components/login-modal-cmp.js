@@ -10,19 +10,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var material_1 = require("@angular/material");
+var session_service_1 = require("../services/session-service");
 var LoginModalCmp = (function () {
-    function LoginModalCmp(loginDialogRef) {
-        this.loginDialogRef = loginDialogRef;
+    function LoginModalCmp(sessionService) {
+        this.sessionService = sessionService;
+        // default setting
+        this.loginModalForm = {
+            loginName: "",
+            loginPassword: ""
+        };
     }
+    LoginModalCmp.prototype.login = function (loginData) {
+        // login
+        this.sessionService.login(loginData).subscribe(function (result) {
+            console.log('Login Success', result);
+        });
+    };
+    LoginModalCmp.prototype.logout = function () {
+        // logout
+        this.sessionService.logout().subscribe(function (result) {
+            console.log('Logout Success', result);
+        });
+    };
     LoginModalCmp = __decorate([
         core_1.Component({
             selector: "login-modal",
             templateUrl: "common/templates/login.modal.html",
             styleUrls: ["common/styles/login.modal.css"]
         }),
-        __metadata("design:paramtypes", [material_1.MdDialogRef])
+        __metadata("design:paramtypes", [session_service_1.SessionService])
     ], LoginModalCmp);
     return LoginModalCmp;
 }());
 exports.LoginModalCmp = LoginModalCmp;
+//# sourceMappingURL=login-modal-cmp.js.map
