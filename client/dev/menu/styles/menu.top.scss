@@ -14,16 +14,21 @@
     }
   }
 
-  .menu-login {
+  .menu-login, .menu-user {
     padding: 16px 25px;
     cursor: pointer;
     height: 100%;
+    background-color: transparent;
 
     & > * {
       vertical-align: middle;
     }
 
     &:hover, &:active {
+      background-color: $color-main-menu-bg-active;
+    }
+
+    &.selected {
       background-color: $color-main-menu-bg-active;
     }
   }

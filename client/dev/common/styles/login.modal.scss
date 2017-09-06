@@ -79,21 +79,52 @@
   .login-form-title {
     font-size: 1.1em;
     color: #848484;
+    text-align: center;
   }
 
   form.login-modal-form {
 
     font-size: 1.2em;
     text-align: center;
+    margin-top: 5px;
 
     .login-modal-input-container {
       line-height: 1.5em;
       display: block;
+      width: 100%;
+      padding: 0 20px;
 
       .mat-input-element {
         font-size: 1.4em;
       }
+    }
 
+    .login-modal-btn {
+      width: 330px;
+      margin-top: 8px;
+    }
+  }
+}
+
+.login-modal-bottom-toolbar {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 0.9em;
+  padding: 0 20px;
+
+  .login-modal-desc {
+    display: inline-block;
+    color: gray;
+  }
+
+  .login-modal-link-btn {
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: bold;
+    color: $hash-video-active-main-color;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

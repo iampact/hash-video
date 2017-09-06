@@ -2,6 +2,8 @@
 import SearchRoutes from "../api/search/route/search-route";
 import CommonRoutes from "../api/common/route/common-route";
 import SessionRoutes from "../api/session/route/session-route";
+import ExternalSessionRoutes from "../api/session/route/external-session-route";
+
 import StaticDispatcher from "../commons/static/index";
 
 export default class Routes {
@@ -10,6 +12,7 @@ export default class Routes {
      CommonRoutes.init(router);
      SearchRoutes.init(router);
      SessionRoutes.init(router);
+     ExternalSessionRoutes.init(router);
 
      router
        .route("*")

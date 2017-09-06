@@ -1,0 +1,28 @@
+<h2 class="common-modal-title">{{title}}</h2>
+<div class="common-modal-contents-container">
+  <md-icon class="contents-icon">{{typeIconName}}</md-icon>
+  <div class="contents-html" [innerHTML]="contents"></div>
+</div>
+
+<div *ngIf="isConfirmModal">
+  <button md-button
+          md-dialog-close="ok"
+          class="common-modal-btn">
+    <span class="common-modal-text">확인</span>
+  </button>
+
+  <button md-button
+          md-dialog-close="cancel"
+          class="common-modal-btn">
+    <span class="common-modal-text">취소</span>
+  </button>
+</div>
+
+<div *ngIf="!isConfirmModal" class="common-modal-btn-box">
+  <button md-button
+          md-dialog-close="close"
+          class="common-modal-btn">
+    <span class="common-modal-text">닫기</span>
+  </button>
+
+</div>

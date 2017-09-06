@@ -5,6 +5,8 @@ import helmet from "helmet";
 import express from "express";
 import compression from "compression";
 import zlib from "zlib";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 
 export default class RouteConfig {
     static init(application) {
@@ -25,5 +27,7 @@ export default class RouteConfig {
         application.use(morgan("dev"));
         application.use(contentLength.validateMax({max: 999}));
         application.use(helmet());
+        application.use(cors());
+        application.use(cookieParser());
     }
 }

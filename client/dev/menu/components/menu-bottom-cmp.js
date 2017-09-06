@@ -23,10 +23,12 @@ var core_1 = require("@angular/core");
 var menu_cmp_1 = require("./menu-cmp");
 var menu_service_1 = require("../services/menu-service");
 var common_service_1 = require("../../common/services/common-service");
+var session_service_1 = require("../../common/services/session-service");
+var router_1 = require("@angular/router");
 var MenuBottomCmp = (function (_super) {
     __extends(MenuBottomCmp, _super);
-    function MenuBottomCmp(_menuService, _commonService) {
-        return _super.call(this, _menuService, _commonService) || this;
+    function MenuBottomCmp(_menuService, _commonService, _sessionService, _router) {
+        return _super.call(this, _menuService, _commonService, _sessionService, _router) || this;
     }
     MenuBottomCmp = __decorate([
         core_1.Component({
@@ -34,7 +36,10 @@ var MenuBottomCmp = (function (_super) {
             templateUrl: "menu/templates/menu.bottom.html",
             styleUrls: ["menu/styles/menu.bottom.css"]
         }),
-        __metadata("design:paramtypes", [menu_service_1.MenuService, common_service_1.CommonService])
+        __metadata("design:paramtypes", [menu_service_1.MenuService,
+            common_service_1.CommonService,
+            session_service_1.SessionService,
+            router_1.Router])
     ], MenuBottomCmp);
     return MenuBottomCmp;
 }(menu_cmp_1.MenuCmp));

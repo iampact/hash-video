@@ -15,26 +15,33 @@
     </ul>
   </nav>
 
-  <div md-icon-button class="menu-login" (click)="openLoginDialog()">
-    <md-icon>account_circle</md-icon>
+  <div md-icon-button class="menu-login" [hidden]="isLogined" (click)="openLoginDialog()">
+    <md-icon>fingerprint</md-icon>
     <span>로그인</span>
   </div>
 
-  <button md-icon-button [mdMenuTriggerFor]="topMenu">
-    <md-icon class="top-menu-icon">more_vert</md-icon>
-  </button>
-  <md-menu #topMenu="mdMenu">
-    <button md-menu-item>
-      <md-icon>dialpad</md-icon>
-      <span>Redial</span>
+  <div *ngIf="currentUser"
+       md-icon-button
+       class="menu-user"
+       #userMenuBtn
+       [mdMenuTriggerFor]="userMenu"
+       (onMenuClose)="addUserMenuCloseEvent()"
+       (onMenuOpen)="addUserMenuOpenEvent()"
+       (mouseenter)="openUserMenu()">
+    <span>{{currentUser.USER_NAME}}</span>
+  </div>
+
+  <md-menu #userMenu="mdMenu"
+           yPosition="below"
+           [overlapTrigger]="false">
+    <button (click)="userInfo()" md-menu-item disabled>
+      <md-icon>account_circle</md-icon>
+      <span>내 정보</span>
     </button>
-    <button md-menu-item disabled>
-      <md-icon>voicemail</md-icon>
-      <span>Check voicemail</span>
-    </button>
-    <button md-menu-item>
-      <md-icon>notifications_off</md-icon>
-      <span>Disable alerts</span>
+    <button (click)="logoutUser()" md-menu-item>
+      <md-icon>power_settings_new</md-icon>
+      <span>로그아웃</span>
     </button>
   </md-menu>
+
 </md-toolbar>

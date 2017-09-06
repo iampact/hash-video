@@ -1,0 +1,33 @@
+@import "../../common/styles/color.scss";
+
+.common-modal-title {
+
+}
+
+.common-modal-contents-container {
+
+  margin-bottom: 10px;
+
+  .contents-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: top;
+  }
+
+  .contents-html {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 2em;
+    margin-left: 8px;
+  }
+}
+
+.common-modal-btn-box {
+  text-align: center;
+  .common-modal-btn {}
+}
+
+.mat-dialog-container {
+  min-width: 300px;
+}

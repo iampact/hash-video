@@ -1,5 +1,5 @@
 <button md-button
-        md-dialog-close="facebook"
+        (click)="externalLogin('facebook')"
         class="external-login-btn facebook-style">
   <span class="external-login-icon">
       <i fa [name]="'facebook'"></i>
@@ -7,7 +7,7 @@
   <span class="external-login-text">Facebook 계정으로 로그인</span>
 </button>
 <button md-button
-        md-dialog-close="google"
+        (click)="externalLogin('google')"
         class="external-login-btn google-style">
   <span class="external-login-icon">
       <i fa [name]="'google'"></i>
@@ -16,10 +16,10 @@
 </button>
 <div class="login-text-or">또는</div>
 <div class="login-modal-box">
-  <p class="login-form-title">이메일로 로그인</p>
+  <!--<p class="login-form-title">이메일로 로그인</p>-->
   <form class="login-modal-form"
         (submit)="login(loginModalForm);">
-    <md-input-container class="login-modal-input-container">
+    <md-form-field class="login-modal-input-container">
       <input mdInput
              name="loginName"
              placeholder="이메일 또는 사용자명"
@@ -27,8 +27,8 @@
              [(ngModel)]="loginModalForm.loginName"
              [class.main-error]="!loginModalForm.loginName.length"
              autofocus />
-    </md-input-container>
-    <md-input-container class="login-modal-input-container">
+    </md-form-field>
+    <md-form-field class="login-modal-input-container">
       <input mdInput
              name="loginPassword"
              placeholder="비밀번호"
@@ -36,11 +36,15 @@
              required
              [(ngModel)]="loginModalForm.loginPassword"
              [class.main-error]="!loginModalForm.loginPassword.length" />
-    </md-input-container>
+    </md-form-field>
     <button md-raised-button
-            class="mat-primary"
+            class="mat-primary login-modal-btn"
             type="submit"
             [disabled]="!loginModalForm.loginName.length || !loginModalForm.loginPassword.length">로그인</button>
   </form>
-
+</div>
+<div class="login-text-or">또는</div>
+<div class="login-modal-bottom-toolbar">
+  <p class="login-modal-desc">아직 회원이 아니신가요?</p>
+  <a class="login-modal-link-btn" (click)="router.navigateByUrl('/account/signup');">회원가입</a>
 </div>

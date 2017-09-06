@@ -54,13 +54,27 @@
 
 .login-modal-box .login-form-title {
   font-size: 1.1em;
-  color: #848484; }
+  color: #848484;
+  text-align: center; }
 
 .login-modal-box form.login-modal-form {
   font-size: 1.2em;
-  text-align: center; }
+  text-align: center;
+  margin-top: 5px; }
   .login-modal-box form.login-modal-form .login-modal-input-container {
     line-height: 1.5em;
-    display: block; }
+    display: block;
+    width: 100%;
+    padding: 0 20px; }
     .login-modal-box form.login-modal-form .login-modal-input-container .mat-input-element {
       font-size: 1.4em; }
+  .login-modal-box form.login-modal-form .login-modal-btn {
+    margin-top: 10px; }
+
+.login-modal-bottom-toolbar {
+  maring-top: 5px;
+  text-align: right; }
+  .login-modal-bottom-toolbar .login-modal-desc {
+    display: inline-block; }
+  .login-modal-bottom-toolbar .login-modal-link-btn {
+    display: inline-block; }

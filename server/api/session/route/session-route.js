@@ -1,4 +1,5 @@
 import SessionController from "../controller/session-controller";
+import auth from "../../../auth/local/auth";
 
 export default class SessionRoutes {
   static init(router) {
@@ -6,9 +7,8 @@ export default class SessionRoutes {
       .route("/api/sessions")
       .post(SessionController.login);
 
-    router
-      .route("/api/sessions/current")
-      .get(SessionController.current)
-      .delete(SessionController.logout);
+    router.use("/api/sessions/current", auth.authMiddleware);
+    router.get("/api/sessions/current", SessionController.current);
+    router.delete("/api/sessions/current", SessionController.logout);
   }
 }

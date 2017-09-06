@@ -10,13 +10,16 @@
     max-height: 50px;
     vertical-align: middle; }
 
-.main-top-menu .menu-login {
+.main-top-menu .menu-login, .main-top-menu .menu-user {
   padding: 16px 25px;
   cursor: pointer;
-  height: 100%; }
-  .main-top-menu .menu-login > * {
+  height: 100%;
+  background-color: transparent; }
+  .main-top-menu .menu-login > *, .main-top-menu .menu-user > * {
     vertical-align: middle; }
-  .main-top-menu .menu-login:hover, .main-top-menu .menu-login:active {
+  .main-top-menu .menu-login:hover, .main-top-menu .menu-login:active, .main-top-menu .menu-user:hover, .main-top-menu .menu-user:active {
+    background-color: #e0e0e0; }
+  .main-top-menu .menu-login.selected, .main-top-menu .menu-user.selected {
     background-color: #e0e0e0; }
 
 .main-top-menu nav.main-top-menu-container {

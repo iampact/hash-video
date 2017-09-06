@@ -13,10 +13,13 @@ var core_1 = require("@angular/core");
 var ngx_restangular_1 = require("ngx-restangular");
 var conf_service_1 = require("./conf-service");
 var _ = require("lodash/lodash.js");
+var material_1 = require("@angular/material");
+var common_modal_cmp_1 = require("../components/common-modal-cmp");
 var CommonService = (function () {
-    function CommonService(restangular, _confService) {
+    function CommonService(restangular, _confService, dialog) {
         this.restangular = restangular;
         this._confService = _confService;
+        this.dialog = dialog;
         this._commonRestService = this.restangular.all('common');
     }
     /*
@@ -39,11 +42,33 @@ var CommonService = (function () {
             });
         });
     };
+    /*
+    * OPEN COMMON MODAL
+    * PARAMS: {title:string, contents:any, type:string}
+    * RETURN: MdDialogRef<CommonModalCmp>
+    * */
+    CommonService.prototype.openCommonModal = function (title, contents, type, autoCloseTime) {
+        if (autoCloseTime === void 0) { autoCloseTime = 0; }
+        var config = new material_1.MdDialogConfig();
+        var dialogRef = this.dialog.open(common_modal_cmp_1.CommonModalCmp, config);
+        dialogRef.componentInstance.title = title;
+        dialogRef.componentInstance.contents = contents;
+        dialogRef.componentInstance.type = type;
+        if (autoCloseTime > 0) {
+            // auto close
+            setTimeout(function () {
+                dialogRef.close();
+            }, autoCloseTime);
+        }
+        return dialogRef;
+    };
     CommonService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [ngx_restangular_1.Restangular,
-            conf_service_1.ConfService])
+            conf_service_1.ConfService,
+            material_1.MdDialog])
     ], CommonService);
     return CommonService;
 }());
 exports.CommonService = CommonService;
+//# sourceMappingURL=common-service.js.map
